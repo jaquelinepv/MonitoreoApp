@@ -36,9 +36,7 @@ def prueba():
 	msg = request.get_data()
 	#data = msg
 	js = json.loads(msg.decode("utf-8"))
-	#print(js, type(js))
 	for dato in js:
-		#print(dato, type(dato))
 		almacenamiento(dato)
 		resultado = detectar_condicion(dato)
 		mensaje(resultado)
