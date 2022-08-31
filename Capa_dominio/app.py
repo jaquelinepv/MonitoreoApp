@@ -121,7 +121,8 @@ def acceder():
 		u = Usuario('','', '', usuario, contrasena)
 		acceso = u.acceso()
 		print('datos usuario: ', acceso)
-	
+		#user=u.get_id()
+		#print (user)
 		if  acceso == True:
 			
 			return redirect(url_for('inicio'))
