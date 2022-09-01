@@ -75,7 +75,7 @@ oxg=[]
 temp=[]
 tiempo=[]
 registro=consulta()
-#print(registro)
+
 datos= registro[::-1]
 for dato in datos:
     oxg.append(dato[1])
