@@ -1,7 +1,7 @@
 
 from datetime import date, timedelta
 from Conexion import conectar;
-from datetime import datetime
+#from datetime import datetime
 import tensorflow as tf
 from tensorflow import keras
 from keras.models import load_model
