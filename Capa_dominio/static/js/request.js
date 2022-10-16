@@ -1,9 +1,9 @@
 'use strict'
 //urls servidor
-let urlCharM =  "http://127.0.0.1:8000/monitoreo/"
-let urlCharP =  "http://127.0.0.1:8000/predecir/"
-//let urlCharM ="https://iotacuicola.herokuapp.com/monitoreo/";
-//let urlCharP ="https://iotacuicola.herokuapp.com/predecir/";
+//let urlCharM =  "http://127.0.0.1:8000/monitoreo/"
+//let urlCharP =  "http://127.0.0.1:8000/predecir/"
+let urlCharM ="https://iotacuicola.herokuapp.com/monitoreo/";
+let urlCharP ="https://iotacuicola.herokuapp.com/predecir/";
 //Etiquetas html
 let resumenM = document.getElementById('datos_m');
 let resumenP = document.getElementById('datos_p');
