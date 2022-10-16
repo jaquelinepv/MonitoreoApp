@@ -5,9 +5,9 @@ from runpy import run_path
 import numpy as np
 from flask import Flask, jsonify, request, render_template
 from flask import redirect, url_for, flash
-#from Prediccion import almacenar_prediccion
+from Prediccion import almacenar_prediccion
 from Validaciones import contrasena_val, email_val
-#from Prediccion import actualizar_prediccion, consulta_pronostico
+from Prediccion import actualizar_prediccion, consulta_pronostico
 from Usuarios import Usuario
 from Notificacion import detectar_condicion, consulta_email
 from Monitoreo import actualizacion, almacenamiento
@@ -42,17 +42,15 @@ def recibir_datos():
 		almacenamiento(dato)
 		resultado = detectar_condicion(dato)
 		mensaje(resultado)
-
-	'''URL = "http://127.0.0.1:8000/pronostico"
+	URL = "http://127.0.0.1:8000/pronostico"
 	registro = requests.get(url = URL)
-	almacenar_prediccion(registro)'''
-
+	almacenar_prediccion(registro)
 	return "todo correcto"
 
 @app.route("/datos_pronostico", methods=['POST', 'GET'])
 def recibir_pronostico():
-	#datos = consulta_pronostico
-	return "hola"
+	datos = consulta_pronostico()
+	return datos
 
 @cross_origin
 @app.route('/inicio/', methods=['POST', 'GET'])
