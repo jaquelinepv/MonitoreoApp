@@ -1,12 +1,11 @@
 
-
 from Conexion import conectar;
 
 import requests
 
 #===========================FUNCIONES DE IMPLEMENTACIÓN DEL MODELO===========================
-URL = "http://127.0.0.1:8000/pronostico"
-registro = requests.get(url = URL)
+#URL = "http://127.0.0.1:8000/pronostico"
+#registro = requests.get(url = URL)
 
 def consulta_pronostico():
     con = conectar()
