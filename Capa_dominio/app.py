@@ -5,8 +5,9 @@ from runpy import run_path
 import numpy as np
 from flask import Flask, jsonify, request, render_template
 from flask import redirect, url_for, flash
+#from Prediccion import almacenar_prediccion
 from Validaciones import contrasena_val, email_val
-from Prediccion import actualizar_prediccion, result_pronostico
+#from Prediccion import actualizar_prediccion, consulta_pronostico
 from Usuarios import Usuario
 from Notificacion import detectar_condicion, consulta_email
 from Monitoreo import actualizacion, almacenamiento
@@ -14,6 +15,7 @@ from Validaciones import acceso_val, registro_val
 from flask_mail import Mail, Message
 import json
 from flask_cors import CORS, cross_origin
+import requests
 
 acceso=False
 
@@ -32,7 +34,7 @@ mail= Mail(app)
 #==================================RUTAS=======================================
 # en esta ruta llegaan los datos desde la aplicación movil
 @app.route("/hola", methods=['POST', 'GET'])
-def prueba():
+def recibir_datos():
 	msg = request.get_data()
 	#data = msg
 	js = json.loads(msg.decode("utf-8"))
@@ -41,8 +43,16 @@ def prueba():
 		resultado = detectar_condicion(dato)
 		mensaje(resultado)
 
-	result_pronostico()
+	'''URL = "http://127.0.0.1:8000/pronostico"
+	registro = requests.get(url = URL)
+	almacenar_prediccion(registro)'''
+
 	return "todo correcto"
+
+@app.route("/datos_pronostico", methods=['POST', 'GET'])
+def recibir_pronostico():
+	#datos = consulta_pronostico
+	return "hola"
 
 @cross_origin
 @app.route('/inicio/', methods=['POST', 'GET'])
