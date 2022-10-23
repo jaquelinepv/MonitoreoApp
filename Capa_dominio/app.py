@@ -50,7 +50,21 @@ def recibir_datos():
 @app.route("/datos_pronostico", methods=['POST', 'GET'])
 def recibir_pronostico():
 	datos = consulta_pronostico()
-	return datos
+	o =[]
+	t = []
+	f=[]
+	for dato in datos:
+		o.append(dato[1])
+		t.append(dato[2])
+		f.append(dato[5].strftime('%d/%m/%Y %H:%M:%S'))
+	data = {
+	"oxigeno": o,
+	"temperatura": t,
+	"fecha": f
+    }
+	print(f)  
+
+	return jsonify(data)
 
 @cross_origin
 @app.route('/inicio/', methods=['POST', 'GET'])

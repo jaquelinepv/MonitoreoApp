@@ -16,6 +16,7 @@ def consulta_pronostico():
     con.commit()
     cursor.close()
     con.close()
+   
     return registro
 
 
