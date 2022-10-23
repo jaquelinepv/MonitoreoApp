@@ -42,10 +42,16 @@ def recibir_datos():
 		almacenamiento(dato)
 		resultado = detectar_condicion(dato)
 		mensaje(resultado)
-	'''URL = "http://127.0.0.1:8000/pronostico"
-	registro = requests.get(url = URL)
-	almacenar_prediccion(registro)'''
+
 	return "todo correcto"
+def recibir_pronostico():
+	#URL = "http://127.0.0.1:8000/pronostico"
+	#registro = requests.get(url = URL)
+	pronostico= request.get_data()
+	js = json.loads(pronostico.decode("utf-8"))
+	for dato in js:
+		almacenar_prediccion(dato)
+	return "Todo correcto"
 
 @app.route("/datos_pronostico", methods=['POST', 'GET'])
 def recibir_pronostico():
