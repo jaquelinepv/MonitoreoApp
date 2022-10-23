@@ -56,7 +56,7 @@ def recibir_pronostico():
 	return "Todo correcto"
 
 @app.route("/datos_pronostico", methods=['POST', 'GET'])
-def recibir_pronostico():
+def enviar_registro_pronostico():
 	datos = consulta_pronostico()
 	o =[]
 	t = []
