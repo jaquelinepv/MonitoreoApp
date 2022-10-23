@@ -44,6 +44,8 @@ def recibir_datos():
 		mensaje(resultado)
 
 	return "todo correcto"
+
+@app.route("/recibir_pronostico", methods=['POST', 'GET'])	
 def recibir_pronostico():
 	#URL = "http://127.0.0.1:8000/pronostico"
 	#registro = requests.get(url = URL)
