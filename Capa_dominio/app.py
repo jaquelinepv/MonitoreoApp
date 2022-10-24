@@ -49,7 +49,7 @@ def recibir_datos():
 def recibir_pronostico():
 	#URL = "http://127.0.0.1:8000/pronostico"
 	#registro = requests.get(url = URL)
-	pronostico = request.get_json()
+	pronostico = request.get_data
 	js = json.loads(pronostico.decode("utf-8"))
 	for dato in js:
 		almacenar_prediccion(dato)
