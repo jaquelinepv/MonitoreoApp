@@ -97,8 +97,8 @@ def graficar_m():
 	t_reverse= t[::-1]
 	h_reverse= h[::-1]
 	f_reverse= f[::-1]
-	print(h)
-	print(h_reverse)
+	#print(h)
+	#print(h_reverse)
 
 	data = {
 	"oxigeno": o_reverse,
@@ -125,8 +125,8 @@ def graficar_prediccion():
 	t_reverse= t[::-1]
 	h_reverse= h[::-1]
 	f_reverse= f[::-1]
-	print(h)
-	print(h_reverse)
+	#print(h)
+	#print(h_reverse)
 
 	data = {
 	"oxigeno": o_reverse,
