@@ -45,7 +45,7 @@ def recibir_datos():
 
 	return "todo correcto"
 
-@app.route("/recibir_pronostico", methods=['POST', 'GET'])	
+@app.route("/recibir_pronostico", methods=['GET'])	
 def recibir_pronostico():
 	#URL = "http://127.0.0.1:8000/pronostico"
 	#registro = requests.get(url = URL)
@@ -83,7 +83,7 @@ def inicio():
 @app.route('/monitoreo/', methods=['POST', 'GET'])
 def graficar_m():
 	registro = actualizacion()
-	print(registro)
+	#print(registro)
 	o =[]
 	t = []
 	h = []
