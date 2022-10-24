@@ -8,7 +8,7 @@ def almacenamiento(datos):
     tiempo = data["F"]  + ' ' + data["H"]
     #fecha = data["F"]
     #hora = data["H"].replace('.','').replace(' ','')
-    print(oxigeno, temperatura, tiempo) 
+    #print(oxigeno, temperatura, tiempo) 
     #Iniciar conexión con la base de datos
     con = conectar()
     cursor = con.cursor() 

@@ -45,11 +45,11 @@ def recibir_datos():
 
 	return "todo correcto"
 
-@app.route("/recibir_pronostico", methods=['GET'])	
+@app.route("/recibir_pronostico", methods=['POS', 'GET'])	
 def recibir_pronostico():
 	#URL = "http://127.0.0.1:8000/pronostico"
 	#registro = requests.get(url = URL)
-	pronostico= request.get_data()
+	pronostico = request.get_json()
 	js = json.loads(pronostico.decode("utf-8"))
 	for dato in js:
 		almacenar_prediccion(dato)
@@ -70,7 +70,8 @@ def enviar_registro_pronostico():
 	"temperatura": t,
 	"fecha": f
     }
-	print(f)  
+	
+	#print(f)  
 
 	return jsonify(data)
 
