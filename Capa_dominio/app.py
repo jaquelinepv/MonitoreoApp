@@ -33,6 +33,7 @@ mail= Mail(app)
 
 #==================================RUTAS=======================================
 # en esta ruta llegaan los datos desde la aplicación movil
+@cross_origin
 @app.route("/hola", methods=['POST', 'GET'])
 def recibir_datos():
 	msg = request.get_data()
