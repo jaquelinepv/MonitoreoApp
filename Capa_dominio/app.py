@@ -41,7 +41,7 @@ def recibir_datos():
 	for dato in js:
 		almacenamiento(dato)
 		resultado = detectar_condicion(dato)
-		mensaje(resultado)
+		#mensaje(resultado)
 
 	return "todo correcto"
 
@@ -49,7 +49,7 @@ def recibir_datos():
 def recibir_pronostico():
 	#URL = "http://127.0.0.1:8000/pronostico"
 	#registro = requests.get(url = URL)
-	pronostico = request.get_data
+	pronostico = request.get_data()
 	js = json.loads(pronostico.decode("utf-8"))
 	for dato in js:
 		almacenar_prediccion(dato)
